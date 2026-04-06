@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  description: "LLM and the PA Problem"
+  site-url: https://robertwwalker.github.io/LLM-PA # you must change this appropriately for RSS feeds to work properly
+  title: "LLM-PA"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: bluesky
+        href: https://bsky.app/
+format:
+  html:
+    theme:
+      - superhero
+      - brand
+    css: styles.css
+
+
+
