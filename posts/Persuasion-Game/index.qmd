@@ -1,0 +1,9 @@
+---
+title: "A Persuasion Game"
+author: "RWW"
+date: "2026-04-09"
+categories: [news]
+---
+
+[Try the game here....](./html/game.html)
+

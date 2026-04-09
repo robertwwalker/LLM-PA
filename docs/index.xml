@@ -9,8 +9,27 @@
 <link>https://robertwwalker.github.io/LLM-PA/</link>
 <atom:link href="https://robertwwalker.github.io/LLM-PA/index.xml" rel="self" type="application/rss+xml"/>
 <description>LLM and the PA Problem</description>
-<generator>quarto-1.9.36</generator>
-<lastBuildDate>Mon, 06 Apr 2026 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.8.27</generator>
+<lastBuildDate>Thu, 09 Apr 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Persuasion Game</title>
+  <dc:creator>RWW </dc:creator>
+  <link>https://robertwwalker.github.io/LLM-PA/posts/Persuasion-Game/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="./html/game.html">Try the game here….</a></p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://robertwwalker.github.io/LLM-PA/posts/Persuasion-Game/</guid>
+  <pubDate>Thu, 09 Apr 2026 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Principal-Agent Work on LLMs</title>
   <dc:creator>Chat GPT</dc:creator>

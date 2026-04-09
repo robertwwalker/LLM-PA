@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persuasion Game Simulation</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f4f4f1;
+            padding: 2rem 1rem;
+        }
+
+        .wrap { max-width: 660px; margin: 0 auto; }
+
+        h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
+        .intro { font-size: 14px; color: #555; margin-bottom: 1.5rem; }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.25rem;
+            margin-bottom: 14px;
+        }
+
+        .lbl {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin-bottom: 8px;
+        }
+
+        .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+        .stat { background: #f4f4f1; border-radius: 8px; padding: 10px; text-align: center; }
+        .stat-n { font-size: 20px; font-weight: 500; color: #1a1a1a; }
+        .stat-l { font-size: 11px; color: #888; margin-top: 2px; }
+
+        .prog-track { height: 6px; background: #e8e8e8; border-radius: 3px; margin-bottom: 14px; overflow: hidden; }
+        .prog-fill { height: 100%; background: #378ADD; border-radius: 3px; transition: width .3s; }
+
+        .aspect-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+        .aspect-cell { border: 1px solid #ddd; border-radius: 8px; padding: 14px; text-align: center; }
+        .aspect-cell.will-check { border-color: #378ADD; background: #E6F1FB; }
+        .aspect-big { font-size: 30px; font-weight: 500; color: #1a1a1a; }
+        .aspect-big.checked-ok   { color: #27500A; }
+        .aspect-big.checked-fail { color: #791F1F; }
+        .aspect-sub { font-size: 12px; color: #888; margin-top: 3px; }
+
+        .badge { display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 6px; }
+        .badge-j    { background: #EAF3DE; color: #27500A; }
+        .badge-r    { background: #FCEBEB; color: #791F1F; }
+
+        .rule-box {
+            background: #f4f4f1;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .rule-box b { color: #1a1a1a; font-weight: 500; }
+
+        .spinner-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 12px 0; }
+        .spin-lbl { font-size: 12px; color: #888; margin-bottom: 4px; }
+        .spinner { display: grid; grid-template-columns: 32px 1fr 32px; align-items: center; gap: 4px; }
+        .spin-btn {
+            width: 32px; height: 32px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: transparent;
+            color: #1a1a1a;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .spin-btn:hover { background: #f4f4f1; }
+        .spin-val { text-align: center; font-size: 22px; font-weight: 500; color: #1a1a1a; }
+        .spin-hint { font-size: 11px; color: #888; text-align: center; margin-top: 3px; min-height: 16px; }
+
+        .check-preview { border-radius: 8px; padding: 9px 12px; font-size: 13px; margin: 10px 0; line-height: 1.5; }
+        .preview-check { background: #E6F1FB; color: #0C447C; }
+        .preview-none  { background: #f4f4f1; color: #555; }
+
+        button {
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background: transparent;
+            color: #1a1a1a;
+            cursor: pointer;
+            transition: background .1s;
+        }
+        button:hover { background: #f4f4f1; }
+        button.primary { background: #1a1a1a; color: #fff; border-color: transparent; }
+        button.primary:hover { opacity: .85; }
+
+        .result-banner { border-radius: 8px; padding: 13px 16px; font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+        .res-hired  { background: #EAF3DE; color: #27500A; }
+        .res-reject { background: #FCEBEB; color: #791F1F; }
+        .res-caught { background: #FAEEDA; color: #633806; }
+
+        .log-row {
+            display: grid;
+            grid-template-columns: 20px 1fr auto;
+            gap: 8px;
+            align-items: start;
+            padding: 7px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+        .log-row:last-child { border-bottom: none; }
+        .log-det { font-size: 12px; color: #888; margin-top: 2px; }
+
+        .final-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+        .divider { border: none; border-top: 1px solid #eee; margin: 12px 0; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <h1>The persuasion game</h1>
+    <p class="intro">Based on Glazer &amp; Rubinstein (2004).</p>
+
+    <div id="intro-screen">
+        <div class="panel">
+            <div class="lbl">The situation</div>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:12px;">You are applying for a position at a firm. Before the interview, you submit a CV listing your performance scores from two previous jobs &mdash; each rated out of 5.</p>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:12px;">The hiring manager wants to offer you the role only if your <b>combined score is 7 or more out of 10</b>. Anything below that and, in their judgement, you are not the right fit.</p>
+        </div>
+
+        <div class="panel">
+            <div class="lbl">The problem</div>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:10px;">Calling a previous employer takes time. The manager has to review applications, sit on interview panels, and handle day-to-day work. Realistically, <b>they can only make one reference call</b> before the offer deadline.</p>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:10px;">They know applicants have an incentive to inflate their scores. They also know they can only catch a lie on whichever reference they actually call.</p>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:16px;">So the manager has to decide: <b>given what you claim, which job do they bother checking?</b> And if your numbers are too low to be worth calling anyone, they will simply pass on your application.</p>
+        </div>
+
+        <div class="panel">
+            <div class="lbl">Think before you play</div>
+            <p style="font-size:14px;color:#1a1a1a;margin-bottom:10px;">Put yourself in the manager&rsquo;s shoes for a moment. If an applicant claims a very high score on Job 1, that is the claim most worth verifying &mdash; it does the most work toward the threshold. If Job 1 looks weak but Job 2 looks strong, checking Job 2 makes more sense.</p>
+            <p style="font-size:14px;color:#555;margin-bottom:16px;font-style:italic;">What rule might a rational manager follow? See if the game confirms your intuition.</p>
+            <button class="primary" onclick="startGame()">Start &mdash; play as the applicant</button>
+        </div>
+    </div>
+
+    <div id="game-area" style="display:none;">
+
+        <div class="stat-row">
+            <div class="stat"><div class="stat-n" id="s-round">1<span style="font-size:13px;font-weight:400;color:#888">/10</span></div><div class="stat-l">Round</div></div>
+            <div class="stat"><div class="stat-n" id="s-hired">0</div><div class="stat-l">Hired</div></div>
+            <div class="stat"><div class="stat-n" id="s-rejected">0</div><div class="stat-l">Rejected</div></div>
+        </div>
+        <div class="prog-track"><div class="prog-fill" id="prog" style="width:10%"></div></div>
+
+        <div class="panel">
+            <div class="lbl">Mechanism rule</div>
+            <div class="rule-box">
+                The employer hires only if your combined score across both jobs totals <b>7 or more out of 10</b> &mdash; but they cannot verify both jobs. They will check <b>Job 1</b> if you claim a score &ge; <b>4</b> for it, otherwise <b>Job 2</b> if you claim &ge; <b>4</b>. If neither claim meets that threshold you are <b>rejected outright</b>. You are accepted only if the checked score <b>exactly matches</b> your claim.
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="lbl">Your true profile <span style="font-size:11px;font-weight:400">(only you know this)</span></div>
+            <div class="aspect-row">
+                <div class="aspect-cell" id="tc1">
+                    <div class="aspect-big" id="tx1">—</div>
+                    <div class="aspect-sub">Job 1 score</div>
+                </div>
+                <div class="aspect-cell" id="tc2">
+                    <div class="aspect-big" id="tx2">—</div>
+                    <div class="aspect-sub">Job 2 score</div>
+                </div>
+            </div>
+            <div style="font-size:13px;color:#888;">Sum: <span style="font-weight:500;color:#1a1a1a;" id="tsum">—</span> / 10</div>
+        </div>
+
+        <div class="panel" id="claim-panel">
+            <div class="lbl">Your claim to the employer</div>
+            <div class="spinner-row">
+                <div>
+                    <div class="spin-lbl">Claim for Job 1</div>
+                    <div class="spinner">
+                        <button class="spin-btn" onclick="adj(1,-1)">&#8722;</button>
+                        <div><div class="spin-val" id="c1v">3</div><div class="spin-hint" id="c1h"></div></div>
+                        <button class="spin-btn" onclick="adj(1,1)">+</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="spin-lbl">Claim for Job 2</div>
+                    <div class="spinner">
+                        <button class="spin-btn" onclick="adj(2,-1)">&#8722;</button>
+                        <div><div class="spin-val" id="c2v">3</div><div class="spin-hint" id="c2h"></div></div>
+                        <button class="spin-btn" onclick="adj(2,1)">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="check-preview" id="prev-box"></div>
+            <button class="primary" onclick="submitClaim()">Submit claim</button>
+        </div>
+
+        <div class="panel" id="result-panel" style="display:none;">
+            <div class="lbl">Result</div>
+            <div id="result-banner" class="result-banner"></div>
+            <div class="aspect-row" id="reveal-row"></div>
+            <button class="primary" id="next-btn">Next round</button>
+        </div>
+
+        <div class="panel">
+            <div class="lbl">Round history</div>
+            <div id="log-body"><div style="font-size:13px;color:#888;">No rounds played yet.</div></div>
+        </div>
+
+    </div>
+
+    <div id="final-screen" style="display:none;">
+        <div class="panel">
+            <div class="lbl">Session complete — 10 rounds</div>
+            <div class="final-grid">
+                <div class="stat"><div class="stat-n" id="f-hired">—</div><div class="stat-l">Times hired</div></div>
+                <div class="stat"><div class="stat-n" id="f-bluffs">—</div><div class="stat-l">Successful bluffs</div></div>
+                <div class="stat"><div class="stat-n" id="f-err">—</div><div class="stat-l">Listener error rate</div></div>
+            </div>
+            <div class="rule-box" id="f-breakdown"></div>
+            <div class="divider"></div>
+            <button class="primary" onclick="restartGame()">Play again</button>
+        </div>
+        <div class="panel">
+            <div class="lbl">Full history — with justification revealed</div>
+            <div id="final-log"></div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const MAX_ROUNDS = 10, THRESH = 4, JUSTIFY = 7;
+    let state = { round: 0, hired: 0, rejected: 0, bluffs: 0, mistakes: 0, log: [] };
+    let cur = { x1: 0, x2: 0, c1: 3, c2: 3 };
+
+    function rand(a, b) { return Math.floor(Math.random() * (b - a + 1)) + a; }
+    function isJ(x1, x2) { return x1 + x2 >= JUSTIFY; }
+    function whichCheck(c1, c2) { if (c1 >= THRESH) return 1; if (c2 >= THRESH) return 2; return 0; }
+
+    function newRound() {
+        cur.x1 = rand(1, 5); cur.x2 = rand(1, 5);
+        cur.c1 = cur.x1;     cur.c2 = cur.x2;
+        state.round++;
+
+        document.getElementById('s-round').innerHTML =
+            state.round + '<span style="font-size:13px;font-weight:400;color:#888">/' + MAX_ROUNDS + '</span>';
+        document.getElementById('prog').style.width = Math.round((state.round / MAX_ROUNDS) * 100) + '%';
+
+        document.getElementById('tx1').textContent = cur.x1;
+        document.getElementById('tx2').textContent = cur.x2;
+        document.getElementById('tsum').textContent = cur.x1 + cur.x2;
+        document.getElementById('tc1').className = 'aspect-cell';
+        document.getElementById('tc2').className = 'aspect-cell';
+
+        document.getElementById('claim-panel').style.display  = 'block';
+        document.getElementById('result-panel').style.display = 'none';
+        updateSpinners();
+    }
+
+    function adj(asp, d) {
+        if (asp === 1) cur.c1 = Math.max(1, Math.min(5, cur.c1 + d));
+        else           cur.c2 = Math.max(1, Math.min(5, cur.c2 + d));
+        updateSpinners();
+    }
+
+    function updateSpinners() {
+        document.getElementById('c1v').textContent = cur.c1;
+        document.getElementById('c2v').textContent = cur.c2;
+        let chk = whichCheck(cur.c1, cur.c2);
+
+        document.getElementById('c1h').textContent = cur.c1 >= THRESH ? 'will be checked' : 'below threshold';
+        document.getElementById('c2h').textContent = cur.c2 >= THRESH
+            ? (chk === 2 ? 'will be checked' : 'asp 1 takes priority')
+            : 'below threshold';
+
+        let prev = document.getElementById('prev-box');
+        if (chk === 0) {
+            prev.className = 'check-preview preview-none';
+            prev.textContent = 'Neither claim meets the threshold \u2014 you will be rejected without a check.';
+        } else {
+            prev.className = 'check-preview preview-check';
+            prev.textContent = 'Job ' + chk + ' will be checked.';
+        }
+    }
+
+    function submitClaim() {
+        let chk = whichCheck(cur.c1, cur.c2);
+        let accepted = false, caught = false;
+
+        document.getElementById('tc1').className = 'aspect-cell' + (chk === 1 ? ' will-check' : '');
+        document.getElementById('tc2').className = 'aspect-cell' + (chk === 2 ? ' will-check' : '');
+
+        let banner   = document.getElementById('result-banner');
+        let revealRow = document.getElementById('reveal-row');
+        let revHTML  = '';
+
+        if (chk === 0) {
+            banner.className = 'result-banner res-reject';
+            banner.innerHTML = 'Rejected \u2014 neither claim met the threshold. No verification performed.';
+            revHTML = '<div class="aspect-cell" style="grid-column:1/-1;">' +
+                '<div style="font-size:13px;color:#888;">Claimed (' + cur.c1 + ', ' + cur.c2 + ') \u2014 neither \u2265 ' + THRESH + '.</div>' +
+                '</div>';
+        } else {
+            let cv    = chk === 1 ? cur.c1 : cur.c2;
+            let av    = chk === 1 ? cur.x1 : cur.x2;
+            let match = av === cv;
+            accepted  = match;
+            caught    = !match;
+
+            if (accepted) {
+                banner.className = 'result-banner res-hired';
+                banner.innerHTML = 'Hired \u2014 claim verified. Job ' + chk + ' score confirmed as ' + av + '.';
+            } else {
+                banner.className = 'result-banner res-caught';
+                banner.innerHTML = 'Rejected \u2014 caught. Claimed ' + cv + ' for Job ' + chk + ', actual score is ' + av + '.';
+            }
+
+            let c1class = chk === 1 ? (match ? 'aspect-big checked-ok' : 'aspect-big checked-fail') : 'aspect-big';
+            let c2class = chk === 2 ? (match ? 'aspect-big checked-ok' : 'aspect-big checked-fail') : 'aspect-big';
+            let c1note  = chk === 1 ? (' \u2192 ' + (match ? 'confirmed' : 'refuted')) : '';
+            let c2note  = chk === 2 ? (' \u2192 ' + (match ? 'confirmed' : 'refuted')) : '';
+
+            revHTML =
+                '<div class="aspect-cell ' + (chk === 1 ? 'will-check' : '') + '">' +
+                    '<div class="' + c1class + '">' + cur.x1 + '</div>' +
+                    '<div class="aspect-sub">Job 1 actual' + (chk === 1 ? ' (checked)' : '') + '</div>' +
+                    '<div style="font-size:12px;color:#888;">You claimed ' + cur.c1 + c1note + '</div>' +
+                '</div>' +
+                '<div class="aspect-cell ' + (chk === 2 ? 'will-check' : '') + '">' +
+                    '<div class="' + c2class + '">' + cur.x2 + '</div>' +
+                    '<div class="aspect-sub">Job 2 actual' + (chk === 2 ? ' (checked)' : '') + '</div>' +
+                    '<div style="font-size:12px;color:#888;">You claimed ' + cur.c2 + c2note + '</div>' +
+                '</div>';
+        }
+
+        revealRow.innerHTML = revHTML;
+
+        let j = isJ(cur.x1, cur.x2);
+        if (accepted) state.hired++;    else state.rejected++;
+        if (accepted && !j) { state.bluffs++; state.mistakes++; }
+        if (!accepted && j)   state.mistakes++;
+
+        document.getElementById('s-hired').textContent    = state.hired;
+        document.getElementById('s-rejected').textContent = state.rejected;
+
+        state.log.push({ round: state.round, x1: cur.x1, x2: cur.x2, c1: cur.c1, c2: cur.c2, j, accepted, caught, chk });
+        renderLog('log-body', false);
+
+        document.getElementById('claim-panel').style.display  = 'none';
+        document.getElementById('result-panel').style.display = 'block';
+
+        let nb = document.getElementById('next-btn');
+        if (state.round >= MAX_ROUNDS) {
+            nb.textContent = 'See final results';
+            nb.onclick = showFinal;
+        } else {
+            nb.textContent = 'Next round (' + (state.round + 1) + '/' + MAX_ROUNDS + ')';
+            nb.onclick = nextRound;
+        }
+    }
+
+    function renderLog(targetId, showJustification) {
+        let html = '';
+        [...state.log].reverse().forEach(function(e) {
+            let ic     = e.accepted ? '#3B6D11' : '#A32D2D';
+            let icon   = e.accepted ? '+' : '&times;';
+            let status = e.accepted ? 'hired' : (e.caught ? 'caught' : 'rejected outright');
+            let detailParts = [
+                'true (' + e.x1 + ',' + e.x2 + ')',
+                'claimed (' + e.c1 + ',' + e.c2 + ')',
+                e.chk ? 'Job ' + e.chk + ' checked' : 'no check'
+            ];
+            if (showJustification) {
+                detailParts.push(e.j
+                    ? '<span style="color:#27500A;">justified</span>'
+                    : '<span style="color:#791F1F;">not justified</span>');
+                if (e.accepted && !e.j) detailParts.push('<span style="color:#633806;">successful bluff</span>');
+                if (!e.accepted && e.j) detailParts.push('<span style="color:#633806;">genuine claim rejected</span>');
+            }
+            html +=
+                '<div class="log-row">' +
+                    '<div style="font-weight:500;color:' + ic + ';padding-top:1px;">' + icon + '</div>' +
+                    '<div>' +
+                        '<div>Round ' + e.round + ' \u2014 ' + status + '</div>' +
+                        '<div class="log-det">' + detailParts.join(' &nbsp;|&nbsp; ') + '</div>' +
+                    '</div>' +
+                    '<span class="badge ' + (e.accepted ? 'badge-j' : 'badge-r') + '">' + (e.accepted ? 'hired' : 'out') + '</span>' +
+                '</div>';
+        });
+        document.getElementById(targetId).innerHTML = html || '<div style="font-size:13px;color:#888;">No rounds yet.</div>';
+    }
+
+    function nextRound() {
+        if (state.round >= MAX_ROUNDS) { showFinal(); return; }
+        newRound();
+    }
+
+    function showFinal() {
+        document.getElementById('game-area').style.display    = 'none';
+        document.getElementById('final-screen').style.display = 'block';
+
+        document.getElementById('f-hired').textContent  = state.hired;
+        document.getElementById('f-bluffs').textContent = state.bluffs;
+        let errRate = Math.round((state.mistakes / MAX_ROUNDS) * 100) + '%';
+        document.getElementById('f-err').textContent = errRate;
+
+        let jTotal = state.log.filter(function(e){ return e.j; }).length;
+        let jHired = state.log.filter(function(e){ return e.j && e.accepted; }).length;
+        let rTotal = state.log.filter(function(e){ return !e.j; }).length;
+        let rHired = state.log.filter(function(e){ return !e.j && e.accepted; }).length;
+
+        document.getElementById('f-breakdown').innerHTML =
+            'Of your ' + jTotal + ' <b>justified</b> rounds, you were hired ' + jHired + ' time' + (jHired !== 1 ? 's' : '') + '.<br>' +
+            'Of your ' + rTotal + ' <b>unjustified</b> rounds, you were hired ' + rHired + ' time' + (rHired !== 1 ? 's' : '') + ' (successful bluffs).<br><br>' +
+            "The paper\u2019s optimal mechanism holds the listener\u2019s mistake rate to ~16.7%. " +
+            'Your session produced a mistake rate of ' + errRate + '. ' +
+            (state.mistakes / MAX_ROUNDS <= 0.167
+                ? 'The mechanism worked \u2014 your bluffing was limited.'
+                : 'You exploited the mechanism beyond the theoretical optimum.');
+
+        renderLog('final-log', true);
+    }
+
+    function startGame() {
+        document.getElementById('intro-screen').style.display = 'none';
+        document.getElementById('game-area').style.display    = 'block';
+        newRound();
+    }
+
+    function restartGame() {
+        state = { round: 0, hired: 0, rejected: 0, bluffs: 0, mistakes: 0, log: [] };
+        document.getElementById('final-screen').style.display = 'none';
+        document.getElementById('game-area').style.display    = 'block';
+        newRound();
+    }
+</script>
+</body>
+</html>
