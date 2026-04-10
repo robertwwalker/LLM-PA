@@ -151,7 +151,7 @@
     "href": "index.html",
     "title": "LLM-PA",
     "section": "",
-    "text": "A Persuasion Game\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 9, 2026\n\n\nRWW\n\n\n\n\n\n\n\n\n\n\n\n\nPrincipal-Agent Work on LLMs\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nChat GPT\n\n\n\n\n\n\n\n\n\n\n\n\nPrincipal-Agent Deep Dive on LLMs\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nChat GPT\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 3, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Coopetition\n\n\nCompeting and Cooperating Simultaneously\n\n\n\n\n\n\n\n\nBased on Nalebuff & Brandenburger (1996)\n\n\n\n\n\n\n\n\n\n\n\n\nA Persuasion Game\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 9, 2026\n\n\nRWW\n\n\n\n\n\n\n\n\n\n\n\n\nPrincipal-Agent Work on LLMs\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nChat GPT\n\n\n\n\n\n\n\n\n\n\n\n\nPrincipal-Agent Deep Dive on LLMs\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 6, 2026\n\n\nChat GPT\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 3, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Persuasion-Game/index.html",
@@ -159,5 +159,82 @@
     "title": "A Persuasion Game",
     "section": "",
     "text": "Try the game here…."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#what-is-coopetition",
+    "href": "posts/Persuasion-Game/html/coopetition.html#what-is-coopetition",
+    "title": "Coopetition",
+    "section": "What Is Coopetition?",
+    "text": "What Is Coopetition?\n\n“Business is cooperation when it comes to creating a pie and competition when it comes to dividing it up.” — Nalebuff & Brandenburger\n\nCoopetition = Cooperation + Competition\nA strategic mindset that rejects the zero-sum view of business:\n\nTraditional view: competitors are enemies, industry is a battlefield\nCoopetition view: rivals can simultaneously cooperate and compete\nRooted in game theory — specifically, the theory of value nets and complementors\n\n\n\n\n\n\n\nNote\n\n\nPublished in 1996, Co-opetition by Adam Brandenburger (Harvard) and Barry Nalebuff (Yale) became a landmark business strategy text."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#the-value-net-framework",
+    "href": "posts/Persuasion-Game/html/coopetition.html#the-value-net-framework",
+    "title": "Coopetition",
+    "section": "The Value Net Framework",
+    "text": "The Value Net Framework\nThe Value Net maps all players in the game of business:\n            CUSTOMERS\n                |\nSUPPLIERS — [COMPANY] — COMPETITORS\n                |\n         COMPLEMENTORS\n\n\n\nPlayer\nRole\n\n\n\n\nCustomers\nBuy your product or service\n\n\nSuppliers\nProvide inputs to your business\n\n\nCompetitors\nOffer substitutes; divide the pie\n\n\nComplementors\nOffer complements; grow the pie\n\n\n\n\n\n\n\n\n\nTip\n\n\nKey insight: The same player can be a competitor and a complementor depending on context."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#complementors-the-core-concept",
+    "href": "posts/Persuasion-Game/html/coopetition.html#complementors-the-core-concept",
+    "title": "Coopetition",
+    "section": "Complementors — The Core Concept",
+    "text": "Complementors — The Core Concept\nA firm is your complementor if customers value your product more when they also have the other firm’s product.\nA firm is your competitor if customers value your product less when they also have the other firm’s product.\nClassic examples:\n\n\n\n\n\n\n\n\nYour Product\nComplementor\nWhy?\n\n\n\n\nHardware (PC)\nSoftware (Windows)\nEach makes the other more valuable\n\n\nCars\nPetrol stations\nMore stations → more car purchases\n\n\nVideo game console\nGame titles\nMore games → more console sales\n\n\nCredit cards\nMerchants who accept cards\nEach side needs the other\n\n\n\n\n\n\n\n\n\nImportant\n\n\nComplementors grow the total pie — this is where coopetition creates value before competition divides it."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#parts-the-five-elements-of-strategy",
+    "href": "posts/Persuasion-Game/html/coopetition.html#parts-the-five-elements-of-strategy",
+    "title": "Coopetition",
+    "section": "PARTS — The Five Elements of Strategy",
+    "text": "PARTS — The Five Elements of Strategy\nNalebuff & Brandenburger propose PARTS as levers to change the game:\n\n\n\nLetter\nElement\nQuestion\n\n\n\n\nP\nPlayers\nWho is in the game? Can we add/remove players?\n\n\nA\nAdded Values\nWhat do we uniquely bring?\n\n\nR\nRules\nWhat governs the game? Can we reshape them?\n\n\nT\nTactics\nHow do perceptions shape behavior?\n\n\nS\nScope\nWhat is the boundary of the game?\n\n\n\n\n\n\n\n\n\nNote\n\n\nStrategy = changing the game, not just playing it well. PARTS gives managers a systematic toolkit to identify where and how to intervene."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#example-intel-microsoft-wintel",
+    "href": "posts/Persuasion-Game/html/coopetition.html#example-intel-microsoft-wintel",
+    "title": "Coopetition",
+    "section": "Example: Intel & Microsoft (Wintel)",
+    "text": "Example: Intel & Microsoft (Wintel)\nThe classic coopetition case\n\n\nCooperation\n\nIntel and Microsoft are complementors: faster chips → demand for richer software; better software → demand for faster chips\nBoth invest heavily in growing the PC market\nJoint marketing (“Intel Inside” + Windows branding)\n\n\nCompetition\n\nBoth are large enough to capture the other’s value\nMicrosoft delayed 64-bit OS support, slowing Intel’s upgrade cycle\nIntel promoted rival OS vendors (e.g., Linux) to reduce Microsoft’s leverage\nEach tried to expand into the other’s domain\n\n\n\n\n\n\n\n\nTip\n\n\nLesson: Even the closest complementors compete over value appropriation. Cooperation and rivalry coexist permanently."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#example-airline-alliances-star-alliance-oneworld",
+    "href": "posts/Persuasion-Game/html/coopetition.html#example-airline-alliances-star-alliance-oneworld",
+    "title": "Coopetition",
+    "section": "Example: Airline Alliances (Star Alliance, Oneworld)",
+    "text": "Example: Airline Alliances (Star Alliance, Oneworld)\nCooperation on routes, competition on price and loyalty\n\n\nCooperation\n\nCode-sharing: airlines sell seats on each other’s flights\nShared lounges, baggage handling, and check-in\nCoordinated schedules to expand network reach\nJoint lobbying on aviation regulations\n\n\nCompetition\n\nHead-to-head rivalry on overlapping routes\nCompeting frequent-flyer programs\nPrice wars on transatlantic and transpacific corridors\nAlliance partners compete for corporate contracts\n\n\n\n\n\n\n\n\nNote\n\n\nValue Net lens: Alliance partners are complementors on thin-margin routes neither could serve alone, and competitors on profitable trunk routes."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#example-apple-vs.-samsung",
+    "href": "posts/Persuasion-Game/html/coopetition.html#example-apple-vs.-samsung",
+    "title": "Coopetition",
+    "section": "Example: Apple vs. Samsung",
+    "text": "Example: Apple vs. Samsung\nSupplier, competitor, and complementor — simultaneously\n\nSupplier: Samsung manufactures chips (A-series), displays, and memory used in iPhones\nCompetitor: Samsung Galaxy directly competes with iPhone in smartphones\nComplementor (indirect): Samsung’s Android ecosystem legitimizes the smartphone category, validating demand that Apple also captures\n\n\nSamsung reportedly earned billions annually supplying components to Apple even while competing fiercely in the handset market.\n\n\n\n\n\n\n\nImportant\n\n\nLesson: Supply relationships and competitive rivalries are not mutually exclusive. The Value Net forces managers to hold both realities at once."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#example-automotive-industry-shared-rd",
+    "href": "posts/Persuasion-Game/html/coopetition.html#example-automotive-industry-shared-rd",
+    "title": "Coopetition",
+    "section": "Example: Automotive Industry & Shared R&D",
+    "text": "Example: Automotive Industry & Shared R&D\nCompeting on brand; cooperating on infrastructure\n\n\n\n\n\n\n\n\n\nInitiative\nPartners\nCooperation\nCompetition\n\n\n\n\nBluetooth / USB standards\nAll automakers\nAgreed on connectors\nCompete on in-car UX\n\n\nBattery recycling consortia\nGM, Ford, VW, etc.\nShare recycling infrastructure costs\nCompete for EV market share\n\n\nHERE Maps\nBMW, Audi, Daimler\nCo-own mapping platform\nCompete on navigation features\n\n\nHydrogen fueling stations\nToyota, Honda, Hyundai\nFund shared station networks\nCompete on fuel-cell vehicles\n\n\n\n\n\n\n\n\n\nTip\n\n\nPre-competitive cooperation: Firms cooperate to build the platform (grow the pie), then compete to capture value from it."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#example-video-game-consoles-nintendo-third-party-developers",
+    "href": "posts/Persuasion-Game/html/coopetition.html#example-video-game-consoles-nintendo-third-party-developers",
+    "title": "Coopetition",
+    "section": "Example: Video Game Consoles — Nintendo & Third-Party Developers",
+    "text": "Example: Video Game Consoles — Nintendo & Third-Party Developers\nA two-sided market coopetition dynamic\n\n\nNintendo Cooperates With Developers\n\nLicenses its platform and tools to third parties\nShares marketing support for major releases\nThird-party titles (Ubisoft, EA, Activision) make the Switch more attractive to buyers\nMore buyers → more developer revenue → virtuous cycle\n\n\nNintendo Competes With Developers\n\nFirst-party titles (Mario, Zelda, Pokémon) directly compete for gamers’ time and wallets\nNintendo controls the App Store equivalent — sets fee terms\nCan delay or deny certification to rivals\n\n\n\n\n\n\n\n\nNote\n\n\nPlatform businesses are structurally coopetitive: the platform owner must attract partners to grow the ecosystem while competing with those same partners for end-user spending."
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#key-takeaways",
+    "href": "posts/Persuasion-Game/html/coopetition.html#key-takeaways",
+    "title": "Coopetition",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nThe Coopetition Mindset\n\nReject zero-sum thinking — value can be created before it is divided\nMap your Value Net — identify complementors you may be ignoring\nUse PARTS — you can change the game, not just play it\nEmbrace ambiguity — a rival can be an ally on a different dimension\nGrow the pie first — cooperation to expand the market; compete to capture your share\n\nWhen Is Coopetition Most Valuable?\n\nMarkets with network effects (platforms, ecosystems)\nIndustries requiring shared standards or infrastructure\nSituations where neither firm can serve the market alone\nPre-competitive R&D with uncertain, expensive outcomes\n\n\n\n\n\n\n\nImportant\n\n\n“The name of the game is changing the game.” — Brandenburger & Nalebuff"
+  },
+  {
+    "objectID": "posts/Persuasion-Game/html/coopetition.html#further-reading-references",
+    "href": "posts/Persuasion-Game/html/coopetition.html#further-reading-references",
+    "title": "Coopetition",
+    "section": "Further Reading & References",
+    "text": "Further Reading & References\nPrimary Source\n\nBrandenburger, A. & Nalebuff, B. (1996). Co-opetition. Doubleday.\n\nAcademic Extensions\n\nBrandenburger, A. & Nalebuff, B. (1995). “The Right Game: Use Game Theory to Shape Strategy.” Harvard Business Review, 73(4), 57–71.\nDagnino, G.B. & Padula, G. (2002). “Coopetition Strategy: A New Kind of Interfirm Dynamics for Value Creation.” EURAM Conference.\nBengtsson, M. & Kock, S. (2000). “Coopetition in Business Networks — to Cooperate and Compete Simultaneously.” Industrial Marketing Management, 29(5), 411–426.\n\nCase Studies - Intel & Microsoft (Wintel ecosystem) - Star Alliance formation (1997) - Apple–Samsung supply & rivalry - Automotive hydrogen consortia (2020s)"
   }
 ]

@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -193,7 +193,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(4)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -207,7 +207,32 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV3cw==" data-listing-date-sort="1775718000000" data-listing-file-modified-sort="1775778079849" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1775779462317" data-listing-reading-time-sort="6" data-listing-word-count-sort="1126">
+<div class="thumbnail"><a href="./posts/Persuasion-Game/html/coopetition.html" class="no-external">
+
+<p class="card-img-top"><img src="posts/Persuasion-Game/html/data:image/jpeg;base64,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"  class="thumbnail-image card-img"/></p>
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/Persuasion-Game/html/coopetition.html" class="no-external">Coopetition</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/Persuasion-Game/html/coopetition.html" class="no-external">Competing and Cooperating Simultaneously</a>
+</div>
+<div class="delink listing-description"><a href="./posts/Persuasion-Game/html/coopetition.html" class="no-external">
+
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/Persuasion-Game/html/coopetition.html" class="no-external">
+<div class="listing-author">
+Based on Nalebuff &amp; Brandenburger (1996)
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bmV3cw==" data-listing-date-sort="1775718000000" data-listing-file-modified-sort="1775778079849" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
 <div class="thumbnail"><a href="./posts/Persuasion-Game/index.html" class="no-external">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -217,6 +242,9 @@ window.Quarto = {
 <h3 class="no-anchor listing-title">
 <a href="./posts/Persuasion-Game/index.html" class="no-external">A Persuasion Game</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/Persuasion-Game/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
@@ -237,7 +265,7 @@ RWW
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1775458800000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4770">
+<div class="quarto-post image-right" data-index="2" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1775458800000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4770">
 <div class="thumbnail"><a href="./posts/post-with-code/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/post-with-code/image.jpg" class="thumbnail-image">
@@ -247,6 +275,9 @@ RWW
 <h3 class="no-anchor listing-title">
 <a href="./posts/post-with-code/index.html" class="no-external">Principal-Agent Work on LLMs</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/post-with-code/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
@@ -271,7 +302,7 @@ Chat GPT
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1775458800000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5459">
+<div class="quarto-post image-right" data-index="3" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1775458800000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5459">
 <div class="thumbnail"><a href="./posts/PA-DD-part-1/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/PA-DD-part-1/image.jpg" class="thumbnail-image">
@@ -281,6 +312,9 @@ Chat GPT
 <h3 class="no-anchor listing-title">
 <a href="./posts/PA-DD-part-1/index.html" class="no-external">Principal-Agent Deep Dive on LLMs</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/PA-DD-part-1/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
@@ -305,7 +339,7 @@ Chat GPT
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="bmV3cw==" data-listing-date-sort="1775199600000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
+<div class="quarto-post image-right" data-index="4" data-categories="bmV3cw==" data-listing-date-sort="1775199600000" data-listing-file-modified-sort="1775777943717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
 <div class="thumbnail"><a href="./posts/welcome/index.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p>
@@ -315,6 +349,9 @@ Chat GPT
 <h3 class="no-anchor listing-title">
 <a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
 </h3>
+<div class="listing-subtitle">
+<a href="./posts/welcome/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>

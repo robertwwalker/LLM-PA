@@ -1,0 +1,266 @@
+---
+title: "Coopetition"
+subtitle: "Competing and Cooperating Simultaneously"
+author: "Based on Nalebuff & Brandenburger (1996)"
+format: 
+   revealjs:
+     theme: [custom.scss]
+     scrollable: true
+     logo: AGSMlogo.jpeg
+     footer: "BUS 1301-SP26"
+     multiplex:
+       url: 'https://multiplex-5adl.onrender.com'
+       secret: "7af99b9bf4796dd3e5d8f2ee555098f4"
+       id: "f3ecaf1fa854e20ca0b3e624bf2ee1210f73a24f392ca39e40484a800d4488c1"
+     html-math-method: katex
+     incremental: true
+     slide-number: c/t
+     transition: zoom
+     preview-links: true
+     lightbox: true
+     embed-resources: true
+---
+
+## What Is Coopetition?
+
+> *"Business is cooperation when it comes to creating a pie and competition when it comes to dividing it up."*
+> — Nalebuff & Brandenburger
+
+**Coopetition** = **Co**operation + Com**petition**
+
+A strategic mindset that rejects the zero-sum view of business:
+
+- Traditional view: competitors are enemies, industry is a battlefield
+- Coopetition view: rivals can **simultaneously cooperate and compete**
+- Rooted in **game theory** — specifically, the theory of *value nets* and *complementors*
+
+::: {.callout-note}
+Published in 1996, *Co-opetition* by Adam Brandenburger (Harvard) and Barry Nalebuff (Yale) became a landmark business strategy text.
+:::
+
+---
+
+## The Value Net Framework
+
+The **Value Net** maps all players in the game of business:
+
+```
+            CUSTOMERS
+                |
+SUPPLIERS — [COMPANY] — COMPETITORS
+                |
+         COMPLEMENTORS
+```
+
+| Player | Role |
+|---|---|
+| **Customers** | Buy your product or service |
+| **Suppliers** | Provide inputs to your business |
+| **Competitors** | Offer substitutes; divide the pie |
+| **Complementors** | Offer complements; **grow** the pie |
+
+::: {.callout-tip}
+**Key insight:** The same player can be a competitor *and* a complementor depending on context.
+:::
+
+---
+
+## Complementors — The Core Concept
+
+A firm is your **complementor** if customers value your product *more* when they also have the other firm's product.
+
+A firm is your **competitor** if customers value your product *less* when they also have the other firm's product.
+
+**Classic examples:**
+
+| Your Product | Complementor | Why? |
+|---|---|---|
+| Hardware (PC) | Software (Windows) | Each makes the other more valuable |
+| Cars | Petrol stations | More stations → more car purchases |
+| Video game console | Game titles | More games → more console sales |
+| Credit cards | Merchants who accept cards | Each side needs the other |
+
+::: {.callout-important}
+Complementors **grow the total pie** — this is where coopetition creates value before competition divides it.
+:::
+
+---
+
+## PARTS — The Five Elements of Strategy
+
+Nalebuff & Brandenburger propose **PARTS** as levers to change the game:
+
+| Letter | Element | Question |
+|---|---|---|
+| **P** | Players | Who is in the game? Can we add/remove players? |
+| **A** | Added Values | What do we uniquely bring? |
+| **R** | Rules | What governs the game? Can we reshape them? |
+| **T** | Tactics | How do perceptions shape behavior? |
+| **S** | Scope | What is the boundary of the game? |
+
+::: {.callout-note}
+**Strategy = changing the game**, not just playing it well. PARTS gives managers a systematic toolkit to identify where and how to intervene.
+:::
+
+---
+
+## Example: Intel & Microsoft (Wintel)
+
+**The classic coopetition case**
+
+:::: {.columns}
+
+::: {.column width="50%"}
+### Cooperation
+- Intel and Microsoft are **complementors**: faster chips → demand for richer software; better software → demand for faster chips
+- Both invest heavily in growing the PC market
+- Joint marketing ("Intel Inside" + Windows branding)
+:::
+
+::: {.column width="50%"}
+### Competition
+- Both are large enough to **capture the other's value**
+- Microsoft delayed 64-bit OS support, slowing Intel's upgrade cycle
+- Intel promoted rival OS vendors (e.g., Linux) to reduce Microsoft's leverage
+- Each tried to expand into the other's domain
+:::
+
+::::
+
+::: {.callout-tip}
+**Lesson:** Even the closest complementors compete over value appropriation. Cooperation and rivalry coexist permanently.
+:::
+
+---
+
+## Example: Airline Alliances (Star Alliance, Oneworld)
+
+**Cooperation on routes, competition on price and loyalty**
+
+:::: {.columns}
+
+::: {.column width="55%"}
+### Cooperation
+- Code-sharing: airlines sell seats on each other's flights
+- Shared lounges, baggage handling, and check-in
+- Coordinated schedules to expand network reach
+- Joint lobbying on aviation regulations
+:::
+
+::: {.column width="45%"}
+### Competition
+- Head-to-head rivalry on overlapping routes
+- Competing frequent-flyer programs
+- Price wars on transatlantic and transpacific corridors
+- Alliance partners compete for corporate contracts
+:::
+
+::::
+
+::: {.callout-note}
+**Value Net lens:** Alliance partners are **complementors** on thin-margin routes neither could serve alone, and **competitors** on profitable trunk routes.
+:::
+
+---
+
+## Example: Apple vs. Samsung
+
+**Supplier, competitor, and complementor — simultaneously**
+
+- **Supplier:** Samsung manufactures chips (A-series), displays, and memory used in iPhones
+- **Competitor:** Samsung Galaxy directly competes with iPhone in smartphones
+- **Complementor (indirect):** Samsung's Android ecosystem legitimizes the smartphone category, validating demand that Apple also captures
+
+> Samsung reportedly earned billions annually supplying components to Apple even while competing fiercely in the handset market.
+
+::: {.callout-important}
+**Lesson:** Supply relationships and competitive rivalries are not mutually exclusive. The Value Net forces managers to hold both realities at once.
+:::
+
+---
+
+## Example: Automotive Industry & Shared R&D
+
+**Competing on brand; cooperating on infrastructure**
+
+| Initiative | Partners | Cooperation | Competition |
+|---|---|---|---|
+| **Bluetooth / USB standards** | All automakers | Agreed on connectors | Compete on in-car UX |
+| **Battery recycling consortia** | GM, Ford, VW, etc. | Share recycling infrastructure costs | Compete for EV market share |
+| **HERE Maps** | BMW, Audi, Daimler | Co-own mapping platform | Compete on navigation features |
+| **Hydrogen fueling stations** | Toyota, Honda, Hyundai | Fund shared station networks | Compete on fuel-cell vehicles |
+
+::: {.callout-tip}
+**Pre-competitive cooperation:** Firms cooperate to build the *platform* (grow the pie), then compete to capture value from it.
+:::
+
+---
+
+## Example: Video Game Consoles — Nintendo & Third-Party Developers
+
+**A two-sided market coopetition dynamic**
+
+:::: {.columns}
+
+::: {.column width="55%"}
+### Nintendo Cooperates With Developers
+- Licenses its platform and tools to third parties
+- Shares marketing support for major releases
+- Third-party titles (Ubisoft, EA, Activision) make the Switch more attractive to buyers
+- More buyers → more developer revenue → virtuous cycle
+:::
+
+::: {.column width="45%"}
+### Nintendo Competes With Developers
+- First-party titles (Mario, Zelda, Pokémon) directly compete for gamers' time and wallets
+- Nintendo controls the App Store equivalent — sets fee terms
+- Can delay or deny certification to rivals
+:::
+
+::::
+
+::: {.callout-note}
+**Platform businesses** are structurally coopetitive: the platform owner must attract partners to grow the ecosystem while competing with those same partners for end-user spending.
+:::
+
+---
+
+## Key Takeaways
+
+### The Coopetition Mindset
+
+1. **Reject zero-sum thinking** — value can be created before it is divided
+2. **Map your Value Net** — identify complementors you may be ignoring
+3. **Use PARTS** — you can change the game, not just play it
+4. **Embrace ambiguity** — a rival can be an ally on a different dimension
+5. **Grow the pie first** — cooperation to expand the market; compete to capture your share
+
+### When Is Coopetition Most Valuable?
+- Markets with **network effects** (platforms, ecosystems)
+- Industries requiring **shared standards or infrastructure**
+- Situations where **neither firm can serve the market alone**
+- **Pre-competitive R&D** with uncertain, expensive outcomes
+
+::: {.callout-important}
+*"The name of the game is changing the game."* — Brandenburger & Nalebuff
+:::
+
+---
+
+## Further Reading & References
+
+**Primary Source**
+
+- Brandenburger, A. & Nalebuff, B. (1996). *Co-opetition*. Doubleday.
+
+**Academic Extensions**
+
+- Brandenburger, A. & Nalebuff, B. (1995). "The Right Game: Use Game Theory to Shape Strategy." *Harvard Business Review*, 73(4), 57–71.
+- Dagnino, G.B. & Padula, G. (2002). "Coopetition Strategy: A New Kind of Interfirm Dynamics for Value Creation." *EURAM Conference*.
+- Bengtsson, M. & Kock, S. (2000). "Coopetition in Business Networks — to Cooperate and Compete Simultaneously." *Industrial Marketing Management*, 29(5), 411–426.
+
+**Case Studies**
+- Intel & Microsoft (Wintel ecosystem)
+- Star Alliance formation (1997)
+- Apple–Samsung supply & rivalry
+- Automotive hydrogen consortia (2020s)
